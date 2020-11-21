@@ -1,0 +1,238 @@
+\documentclass{minimal}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+
+\usepackage[default]{lato}
+\usepackage{raleway}
+\usepackage{fontawesome}
+\usepackage{xcolor}
+
+\usepackage{hyperref}
+% \usepackage{showframe}
+
+\usepackage[a4paper, tmargin=0.2in, bmargin=0.2in, lmargin=0.3in, rmargin=0.3in]{geometry}
+\usepackage{lipsum}
+
+\definecolor{dark-gray}{gray}{0.25}
+%
+% CONSTANTS
+%
+\def\headerFont{\fontfamily{Raleway-TLF}\fontsize{36}{40}}
+\def\titleFont{\fontfamily{Raleway-TLF}\fontsize{24}{28}}
+\def\subtitleFont{\fontfamily{Raleway-TLF}\fontsize{18}{22}}
+\def\miniSubtitleFont{\fontfamily{Raleway-TLF}\fontsize{16}{19}\color{dark-gray}}
+\def\dateFont{\fontfamily{Raleway-TLF}\fontsize{15}{17}\scshape}
+\def\miniDateFont{\fontfamily{Raleway-TLF}\fontsize{13}{15}\color{dark-gray}\scshape}
+\def\contentFont{\fontsize{12}{14}}
+
+\def\rSubtitleFont{\fontfamily{Raleway-TLF}\fontsize{14}{16}}
+\def\rSubSubtitleFont{\fontfamily{Raleway-TLF}\fontsize{13}{15}}
+
+\def\extraLight{\fontseries{el}\selectfont}
+\def\light{\fontseries{l}\selectfont}
+\def\semiBold{\fontseries{sb}\selectfont}
+\def\bold{\fontseries{b}\selectfont}
+\def\medium{\fontseries{m}\selectfont}
+\def\alignRight{\null\hfill}
+
+\def\iconsTopMargin{1cm}
+\def\iconsSpaceBetweenRows{0.5cm}
+\def\iconsMinipageWidth{0.333\linewidth}
+\def\iconSpaceBetweenText{1mm}
+\def\alignRight{\hspace*{\fill}}
+\def\leftColWidth{0.6\linewidth}
+\def\rightColWidth{0.35\linewidth}
+\def\titleBottomMargin{0mm}
+\def\dateTopMargin{-3mm}
+\def\miniSubtitleTopMargin{3mm}
+\def\twoColMiniSubtitleTopMargin{-10mm}
+\def\contentTopMarginAlt{1mm}
+\def\subsectionSpace{6mm}
+\def\contentTopMargin{-7mm}
+\def\sectionTopmargin{7mm}
+\def\columnTopMargin{-6mm}
+\def\rContentTopMargin{-7mm}
+
+\begin{document}
+%
+% HEADER
+%
+\begin{center}
+{\headerFont\extraLight LUKA \light JOVIČIĆ}
+\end{center}
+%
+% Social links
+%
+\begin{minipage}[b][\iconsTopMargin]{\iconsMinipageWidth}
+\faHome\hspace{\iconSpaceBetweenText}Pančevo, Serbia
+\end{minipage}%
+\begin{minipage}[b][\iconsTopMargin]{\iconsMinipageWidth}
+\begin{center}
+\faEnvelope\hspace{\iconSpaceBetweenText}\href{mailto:luka.jovicic16+cv@gmail.com}{luka.jovicic16@gmail.com}
+\end{center}
+\end{minipage}%
+\begin{minipage}[b][\iconsTopMargin]{\iconsMinipageWidth}
+\alignRight\faGlobe\hspace{\iconSpaceBetweenText}\href{https://luka-j.github.io}{luka-j.github.io}
+\end{minipage}\linebreak
+\begin{minipage}[b][\iconsSpaceBetweenRows]{\iconsMinipageWidth}
+\faGithub\hspace{\iconSpaceBetweenText}\href{https://github.com/luka-j}{github.com/luka-j}
+\end{minipage}%
+\begin{minipage}[b][\iconsSpaceBetweenRows]{\iconsMinipageWidth}
+\begin{center}
+\faStackOverflow\hspace{\iconSpaceBetweenText}\href{https://stackoverflow.com/u/2363015}{stackoverflow.com/u/2363015}
+\end{center}
+\end{minipage}%
+\begin{minipage}[b][\iconsSpaceBetweenRows]{\iconsMinipageWidth}
+\alignRight\faLinkedin\hspace{\iconSpaceBetweenText}\href{https://linkedin.com/in/luka-j}{linkedin.com/in/luka-j}
+\end{minipage}
+
+\hspace{-1in}
+\vspace{1mm}
+\rule{1.2\linewidth}{0.2mm}
+%
+% Left column
+%
+%
+% Experience
+%
+\begin{minipage}[t]{\leftColWidth}\vspace{\columnTopMargin}
+\begin{minipage}[t]{\linewidth}\vspace{\sectionTopmargin}
+{\titleFont\light EXPERIENCE}\linebreak
+
+\vspace{\titleBottomMargin}
+{\subtitleFont\bold SOFTWARE ENGINEER \extraLight\scshape | Centili}\newline
+\vfill\vspace{\dateTopMargin}{\dateFont\extraLight Aug 2019 -- present\alignRight}\linebreak\newline
+
+\vspace{\twoColMiniSubtitleTopMargin}
+\begin{minipage}[t]{0.45\linewidth}
+{\miniSubtitleFont\bold JUNIOR\\\miniDateFont\extraLight Oct 2019 -- Dec 2020 }
+\end{minipage}
+\begin{minipage}[t]{0.3\linewidth}
+{\miniSubtitleFont\bold INTERN\\\miniDateFont\extraLight Aug -- Oct 2019 }
+\end{minipage}\newline
+
+\vspace{\contentTopMarginAlt}
+{\contentFont As a part of the core engine team, main parts of my work were maintaining and upgrading the heart of the platform which processes over 1.5 million transactions daily. My main projects were building an API Gateway system from ground up and containerizing, upgrading and maintaining our CI/CD pipeline. I was also a part of a strike team which developed new microservices and adapted existing infrastructure for emerging business needs.}
+\end{minipage}\newline%
+%
+\begin{minipage}[t]{\linewidth}\vspace{\subsectionSpace}
+{\subtitleFont\bold WIKI AMBASSADOR \extraLight\scshape | Wikimedia Serbia}\newline
+{\vfill\vspace{\dateTopMargin}\dateFont\extraLight Dec 2018 -- present\alignRight}\linebreak\newline
+
+\vspace{\contentTopMargin}
+{\contentFont As a student Wiki ambassador, I’ve worked with other Wikimedia volunteers, established new partnerships between Wikimedia Serbia and teachers and professors, envisioned student projects which contribute to Wikipedia and Wikidata, hosted workshops, and overseen and assisted in students’ work.}
+\end{minipage}\newline%
+%
+% Formal Education
+%
+\begin{minipage}[t]{\linewidth}\vspace{\sectionTopmargin}
+{\titleFont\light FORMAL EDUCATION}\newline
+
+\vspace{\titleBottomMargin}
+{\subtitleFont\bold FACULTY OF MATHEMATICS \newline\extraLight\scshape University of Belgrade}\newline
+
+{\vspace{-3mm}\dateFont\extraLight Informatics, 240ECTS | Oct 2018 -- present}\newline
+
+\vspace{-3mm}
+{\contentFont I'm currently enrolled to 3rd year of Bachelor studies in Informatics, passing all examinations on schedule. You can find all my coursework on GitHub. % you can't, TODO upload and add link
+During the course of my studies, I've developed a fully configurable \href{https://github.com/luka-j/ballistic-projectile/}{ballistic projectile flight path simulator} in Python. I was also a part of the team which developed \emph{projekat iz RG goes here}.}
+\end{minipage}\newline%
+%
+\begin{minipage}[t]{\linewidth}\vspace{\subsectionSpace}
+{\subtitleFont\bold MATHEMATICAL GRAMMAR SCHOOL}\newline
+{\vfill\vspace{\dateTopMargin}\dateFont\extraLight Sep 2014 -- Jun 2018\alignRight}\linebreak\newline
+
+\vspace{\contentTopMargin}
+{\contentFont I graduated from a school with High National Distinction status, specialized for mathematics and related disciplines, with 5/5 grade. My graduation thesis on data scraping and analysis of national primary school graduation results, was selected as one of the best informatics theses for school year 2017/18.} % todo links
+\end{minipage}\newline%
+%
+% Extracurricular activities
+%
+\begin{minipage}[t]{\linewidth}\vspace{\sectionTopmargin}
+{\titleFont\light EXTRACURRICULARS}\newline
+
+\vspace{\titleBottomMargin}
+{\subtitleFont\bold CS WEEK AT MGB \dateFont\extraLight(2018)}\newline
+\newline
+
+\vspace{-7mm}
+{\contentFont A four-year regular participant, I held a lecture on exploratory data analysis at 2018 edition of \href{http://csnedelja.mg.edu.rs/}{Computer Science Week at Mathematical Grammar School}. I've built a demo web app written in R \href{https://github.com/luka-j/csw5-eda}{available on my GitHub}.}
+\end{minipage}
+\newline%
+%
+\begin{minipage}[t]{\linewidth}\vspace{\subsectionSpace}
+{\subtitleFont\bold ENGLISH LANGUAGE CONFERENCES}\newline
+\newline
+
+\vspace{-7mm}
+{\contentFont I've co-authored and presented papers (with high school teacher and peers) on Canadian film and teaching English as a second language at two international language conferences in \href{https://www.npao.ni.ac.rs/filozofski-fakultet/download/391_964a4088cf25e02b20de75ae7a784ddf}{Belgrade (2017)} and \href{http://fl.uni-mb.si/wp-content/uploads/2011/09/Book-of-Abstracts-ILC-SLO-2011.pdf}{Celje (2018)} respectively.}
+\end{minipage}
+% End left column
+\end{minipage}%
+%
+%
+% RIGHT COLUMN
+%
+%
+\hfill
+\begin{minipage}[t]{\rightColWidth}\vspace{\columnTopMargin}
+%
+% Tech
+%
+\begin{minipage}[t]{\linewidth}\vspace{\sectionTopmargin}
+{\alignRight\titleFont\light TECH STACK}\linebreak\newline
+
+\vspace{\contentTopMargin}
+{\contentFont\bold Main toolbox: \medium Java, Spring Boot, Docker, Jenkins, PostgreSQL, Kotlin}
+
+\vspace{2mm}
+{\contentFont\bold Familiar with: \medium C, Bash, Python, R, Play! Framework, Android, WildFly, JavaScript, HTTP, \LaTeX}
+
+\vspace{2mm}
+{\contentFont\bold Experimenting with: \medium Scala, Redis \& Sentinel, Docker Swarm, distributed computing, Prolog, C++}
+
+\vspace{2mm}
+{\contentFont\bold Curious about: \medium Rust, Go, big data, GCP, neural networks}
+\end{minipage}\newline%
+%
+% Informal education
+%
+\begin{minipage}[t]{\linewidth}\vspace{\sectionTopmargin}
+{\alignRight\titleFont\light INFORMAL\linebreak\alignRight EDUCATION}\linebreak\newline
+{\alignRight\rSubtitleFont\bold Petnica Summer Insitute}\newline
+{\alignRight\rSubSubtitleFont\light Machine learning, 2019}\linebreak\newline
+
+\vspace{\rContentTopMargin}
+{\contentFont I've participated in an intensive 10-day bootcamp on machine learning, organized by Microsoft Development Center Serbia and Petnica SC. After partaking in lectures and workshops, I've worked on a project which used a conditional generative adversarial network to generate metal album cover arts. Our testimonial is featured \href{http://psiml.petnica.rs/MetalGan.php}{on the PSI:ML website}.}
+
+\end{minipage}\newline%
+%
+\begin{minipage}[t]{\linewidth}\vspace{\subsectionSpace}
+{\alignRight\rSubtitleFont\bold Petnica Science Center}\newline
+{\alignRight\rSubSubtitleFont\light Psychology seminars, 2017–18}\linebreak\newline
+
+\vspace{\rContentTopMargin}
+{\contentFont I've taken part in various lectures and workshops about research psychology. After writing practice papers and projects, I spent one year working on my own research on the role of emoticons and  emojis in nonverbal irony, presented at the annual “Step Into Science” conference and published in Petnica Papers.}
+\end{minipage}\newline%
+%
+\begin{minipage}[t]{\linewidth}\vspace{\subsectionSpace}
+{\alignRight\rSubtitleFont\bold JCon}\newline
+{\alignRight\rSubSubtitleFont\light Online conference, 2020}\linebreak\newline
+
+\vspace{\rContentTopMargin}
+{\contentFont I've attended one of the largest Java conferences, learning about the future of Java, trends in microservice development in 2020, best testing practices and pathways to cloud native apps. \href{https://gist.github.com/luka-j/2c1230dea9f24c3a9b9cb30d661bb02e}{My notes are available on Gist.}}
+\end{minipage}\newline%
+%
+% Scholarships
+%
+\begin{minipage}[t]{\linewidth}\vspace{\sectionTopmargin}
+{\alignRight\titleFont\light SCOLARSHIPS}\linebreak\newline
+
+\vspace{\rContentTopMargin}
+{\contentFont\textbf{National scholarship for students}\linebreak (2019/2020, 2020/2021), awarded to higher education students which maintain exceptional GPA.}\alignRight\linebreak
+{\contentFont\textbf{???} (2020/2021), ???.}
+\end{minipage}
+% End right column
+\end{minipage}
+% End page 1
+\end{document}

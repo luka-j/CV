@@ -6,14 +6,31 @@
 \usepackage{raleway}
 \usepackage{fontawesome}
 \usepackage{xcolor}
+\usepackage{soul}
 
 \usepackage{hyperref}
 % \usepackage{showframe}
 
-\usepackage[a4paper, tmargin=0.2in, bmargin=0.2in, lmargin=0.3in, rmargin=0.3in]{geometry}
+\usepackage[a4paper, tmargin=0.2in, bmargin=0.3in, lmargin=0.3in, rmargin=0.3in]{geometry}
 \usepackage{lipsum}
+\usepackage{contour}
+\usepackage{ulem}
+\usepackage{tcolorbox}
+\usepackage{varwidth}
+\usepackage{pbox}
+\usepackage[super]{nth}
+
+\renewcommand{\ULdepth}{1.8pt}
+\contourlength{0.8pt}
+
+\newcommand{\prettyUline}[1]{% phantom and countour (both!) operate in restricted horizontal environment, i.e. don't support line breaks; todo fix it sometime 
+  \uline{\phantom{#1}}%
+  \llap{\contour{white}{#1}}%
+}
+
 
 \definecolor{dark-gray}{gray}{0.25}
+\definecolor{very-dark-gray}{gray}{0.15}
 %
 % CONSTANTS
 %
@@ -23,7 +40,11 @@
 \def\miniSubtitleFont{\fontfamily{Raleway-TLF}\fontsize{16}{19}\color{dark-gray}}
 \def\dateFont{\fontfamily{Raleway-TLF}\fontsize{15}{17}\scshape}
 \def\miniDateFont{\fontfamily{Raleway-TLF}\fontsize{13}{15}\color{dark-gray}\scshape}
+\def\ribbonFont{\fontfamily{Raleway-TLF}\fontsize{12}{14}}
 \def\contentFont{\fontsize{12}{14}}
+
+\def\linkText#1{\color{very-dark-gray}\prettyUline{#1}}
+\def\cvLink#1#2{\href{#1}{\linkText{#2}}} % doesn't support line breaks — keep link text short!
 
 \def\rSubtitleFont{\fontfamily{Raleway-TLF}\fontsize{14}{16}}
 \def\rSubSubtitleFont{\fontfamily{Raleway-TLF}\fontsize{13}{15}}
@@ -35,8 +56,11 @@
 \def\medium{\fontseries{m}\selectfont}
 \def\alignRight{\null\hfill}
 
-\def\iconsTopMargin{1cm}
-\def\iconsSpaceBetweenRows{0.5cm}
+\newtcolorbox{ribbonBox}[1]{colframe=#1!75!black, colback=white, hbox, boxsep=0mm, left=0.4mm, right=0.4mm, text height=0.8em}
+\def\ribbon#1#2{\pbox{5cm}{\begin{ribbonBox}{#1}{\ribbonFont\medium #2}\end{ribbonBox}}\hspace{\ribbonSpace}}
+
+\def\iconsTopMargin{-15mm}
+\def\iconsSpaceBetweenRows{-3mm}
 \def\iconsMinipageWidth{0.333\linewidth}
 \def\iconSpaceBetweenText{1mm}
 \def\alignRight{\hspace*{\fill}}
@@ -47,13 +71,23 @@
 \def\miniSubtitleTopMargin{3mm}
 \def\twoColMiniSubtitleTopMargin{-10mm}
 \def\contentTopMarginAlt{1mm}
-\def\subsectionSpace{6mm}
+\def\subsectionSpace{5mm}
 \def\contentTopMargin{-7mm}
 \def\sectionTopmargin{7mm}
-\def\columnTopMargin{-6mm}
+\def\columnTopMargin{-3mm}
 \def\rContentTopMargin{-7mm}
+\def\pageTwoTopMargin{1mm}
+\def\ribbonTopMargin{-3mm}
+\def\ribbonSpace{1mm}
 
-\begin{document}
+\def\ribbonJava{\ribbon{orange}{Java}}
+\def\ribbonAndroid{\ribbon{green}{Android}}
+\def\ribbonPlay{\ribbon{lime}{Play! Framework}}
+\def\ribbonPostgres{\ribbon{violet}{PostgreSQL}}
+\def\ribbonSwing{\ribbon{blue}{Swing}}
+\def\ribbonJavascript{\ribbon{yellow}{Javascript}}
+
+\begin{document}\noindent
 %
 % HEADER
 %
@@ -63,32 +97,37 @@
 %
 % Social links
 %
-\begin{minipage}[b][\iconsTopMargin]{\iconsMinipageWidth}
+\begin{center}
+\begin{minipage}[b]{\iconsMinipageWidth}
 \faHome\hspace{\iconSpaceBetweenText}Pančevo, Serbia
 \end{minipage}%
-\begin{minipage}[b][\iconsTopMargin]{\iconsMinipageWidth}
+\begin{minipage}[b]{\iconsMinipageWidth}
 \begin{center}
 \faEnvelope\hspace{\iconSpaceBetweenText}\href{mailto:luka.jovicic16+cv@gmail.com}{luka.jovicic16@gmail.com}
 \end{center}
 \end{minipage}%
-\begin{minipage}[b][\iconsTopMargin]{\iconsMinipageWidth}
+\begin{minipage}[b]{\iconsMinipageWidth}
 \alignRight\faGlobe\hspace{\iconSpaceBetweenText}\href{https://luka-j.github.io}{luka-j.github.io}
-\end{minipage}\linebreak
-\begin{minipage}[b][\iconsSpaceBetweenRows]{\iconsMinipageWidth}
+\end{minipage}\newline%
+%
+\vspace{\iconsSpaceBetweenRows}
+\begin{minipage}[b]{\iconsMinipageWidth}
 \faGithub\hspace{\iconSpaceBetweenText}\href{https://github.com/luka-j}{github.com/luka-j}
 \end{minipage}%
-\begin{minipage}[b][\iconsSpaceBetweenRows]{\iconsMinipageWidth}
+\begin{minipage}[b]{\iconsMinipageWidth}
 \begin{center}
 \faStackOverflow\hspace{\iconSpaceBetweenText}\href{https://stackoverflow.com/u/2363015}{stackoverflow.com/u/2363015}
 \end{center}
 \end{minipage}%
-\begin{minipage}[b][\iconsSpaceBetweenRows]{\iconsMinipageWidth}
+\begin{minipage}[b]{\iconsMinipageWidth}
 \alignRight\faLinkedin\hspace{\iconSpaceBetweenText}\href{https://linkedin.com/in/luka-j}{linkedin.com/in/luka-j}
-\end{minipage}
+\end{minipage}\newline
+\end{center}
 
-\hspace{-1in}
-\vspace{1mm}
-\rule{1.2\linewidth}{0.2mm}
+\vskip -0.7cm  % this whole header is negative vspace clusterfuckery. Just don't touch anything.
+\noindent
+\hspace{-0.33in}
+\rule{1.1\linewidth}{0.2mm}
 %
 % Left column
 %
@@ -112,7 +151,7 @@
 \end{minipage}\newline
 
 \vspace{\contentTopMarginAlt}
-{\contentFont As a part of the core engine team, main parts of my work were maintaining and upgrading the heart of the platform which processes over 1.5 million transactions daily. My main projects were building an API Gateway system from ground up and containerizing, upgrading and maintaining our CI/CD pipeline. I was also a part of a strike team which developed new microservices and adapted existing infrastructure for emerging business needs.}
+{\contentFont As a part of the core engine team, my work usually consisted of maintaining and upgrading the heart of the platform which processes over 1.5 million transactions daily. My main projects were building an API Gateway system from ground up and containerizing, upgrading and maintaining our CI/CD pipeline. I was also a part of a strike team which developed new microservices and adapted existing infrastructure for emerging business needs.}
 \end{minipage}\newline%
 %
 \begin{minipage}[t]{\linewidth}\vspace{\subsectionSpace}
@@ -129,13 +168,13 @@
 {\titleFont\light FORMAL EDUCATION}\newline
 
 \vspace{\titleBottomMargin}
-{\subtitleFont\bold FACULTY OF MATHEMATICS \newline\extraLight\scshape University of Belgrade}\newline
+{\subtitleFont\bold FACULTY OF MATHEMATICS \vspace{0.75mm}\newline\extraLight\scshape University of Belgrade}\newline
 
 {\vspace{-3mm}\dateFont\extraLight Informatics, 240ECTS | Oct 2018 -- present}\newline
 
 \vspace{-3mm}
 {\contentFont I'm currently enrolled to 3rd year of Bachelor studies in Informatics, passing all examinations on schedule. You can find all my coursework on GitHub. % you can't, TODO upload and add link
-During the course of my studies, I've developed a fully configurable \href{https://github.com/luka-j/ballistic-projectile/}{ballistic projectile flight path simulator} in Python. I was also a part of the team which developed \emph{projekat iz RG goes here}.}
+During the course of my studies, I've developed a fully configurable ballistic projectile \cvLink{https://github.com/luka-j/ballistic-projectile/}{flight path simulator} in Python. I was also a part of the team which developed \emph{projekat iz RG goes here}.}
 \end{minipage}\newline%
 %
 \begin{minipage}[t]{\linewidth}\vspace{\subsectionSpace}
@@ -143,7 +182,7 @@ During the course of my studies, I've developed a fully configurable \href{https
 {\vfill\vspace{\dateTopMargin}\dateFont\extraLight Sep 2014 -- Jun 2018\alignRight}\linebreak\newline
 
 \vspace{\contentTopMargin}
-{\contentFont I graduated from a school with High National Distinction status, specialized for mathematics and related disciplines, with 5/5 grade. My graduation thesis on data scraping and analysis of national primary school graduation results, was selected as one of the best informatics theses for school year 2017/18.} % todo links
+{\contentFont I graduated from a school with High National Distinction status, specialized for mathematics and related disciplines, with 5/5 grade. My graduation thesis on data scraping and analysis of national primary school graduation results was selected as one of the best informatics theses for school year 2017/18.} % todo links
 \end{minipage}\newline%
 %
 % Extracurricular activities
@@ -156,7 +195,7 @@ During the course of my studies, I've developed a fully configurable \href{https
 \newline
 
 \vspace{-7mm}
-{\contentFont A four-year regular participant, I held a lecture on exploratory data analysis at 2018 edition of \href{http://csnedelja.mg.edu.rs/}{Computer Science Week at Mathematical Grammar School}. I've built a demo web app written in R \href{https://github.com/luka-j/csw5-eda}{available on my GitHub}.}
+{\contentFont A four-year regular participant, I held a lecture on exploratory data analysis at 2018 edition of \cvLink{http://csnedelja.mg.edu.rs/}{Computer Science Week at Mathematical Grammar School}. I've built a demo web app written in R \cvLink{https://github.com/luka-j/csw5-eda}{available on my GitHub}.}
 \end{minipage}
 \newline%
 %
@@ -165,7 +204,7 @@ During the course of my studies, I've developed a fully configurable \href{https
 \newline
 
 \vspace{-7mm}
-{\contentFont I've co-authored and presented papers (with high school teacher and peers) on Canadian film and teaching English as a second language at two international language conferences in \href{https://www.npao.ni.ac.rs/filozofski-fakultet/download/391_964a4088cf25e02b20de75ae7a784ddf}{Belgrade (2017)} and \href{http://fl.uni-mb.si/wp-content/uploads/2011/09/Book-of-Abstracts-ILC-SLO-2011.pdf}{Celje (2018)} respectively.}
+{\contentFont I've co-authored and presented papers (with high school teacher and peers) on Canadian film and teaching English as a second language at two international language conferences in \cvLink{https://www.npao.ni.ac.rs/filozofski-fakultet/download/391_964a4088cf25e02b20de75ae7a784ddf}{Belgrade (2017)} and \cvLink{http://fl.uni-mb.si/wp-content/uploads/2011/09/Book-of-Abstracts-ILC-SLO-2011.pdf}{Celje (2018)} respectively.}
 \end{minipage}
 % End left column
 \end{minipage}%
@@ -203,7 +242,7 @@ During the course of my studies, I've developed a fully configurable \href{https
 {\alignRight\rSubSubtitleFont\light Machine learning, 2019}\linebreak\newline
 
 \vspace{\rContentTopMargin}
-{\contentFont I've participated in an intensive 10-day bootcamp on machine learning, organized by Microsoft Development Center Serbia and Petnica SC. After partaking in lectures and workshops, I've worked on a project which used a conditional generative adversarial network to generate metal album cover arts. Our testimonial is featured \href{http://psiml.petnica.rs/MetalGan.php}{on the PSI:ML website}.}
+{\contentFont I've participated in an intensive 10-day bootcamp on machine learning, organized by Microsoft Development Center Serbia and Petnica SC. After partaking in lectures and workshops, I've worked on a project which used a conditional generative adversarial network to generate metal album cover arts. Our testimonial is featured \cvLink{http://psiml.petnica.rs/MetalGan.php}{on the PSI:ML website}.}
 
 \end{minipage}\newline%
 %
@@ -212,7 +251,7 @@ During the course of my studies, I've developed a fully configurable \href{https
 {\alignRight\rSubSubtitleFont\light Psychology seminars, 2017–18}\linebreak\newline
 
 \vspace{\rContentTopMargin}
-{\contentFont I've taken part in various lectures and workshops about research psychology. After writing practice papers and projects, I spent one year working on my own research on the role of emoticons and  emojis in nonverbal irony, presented at the annual “Step Into Science” conference and published in Petnica Papers.}
+{\contentFont I've taken part in various lectures and workshops about research psychology. After writing practice papers and projects, I spent one year working on my own research on the role of emoticons and emojis in nonverbal irony, presented at the annual “Step Into Science” conference and published in Petnica Papers.}
 \end{minipage}\newline%
 %
 \begin{minipage}[t]{\linewidth}\vspace{\subsectionSpace}
@@ -220,19 +259,64 @@ During the course of my studies, I've developed a fully configurable \href{https
 {\alignRight\rSubSubtitleFont\light Online conference, 2020}\linebreak\newline
 
 \vspace{\rContentTopMargin}
-{\contentFont I've attended one of the largest Java conferences, learning about the future of Java, trends in microservice development in 2020, best testing practices and pathways to cloud native apps. \href{https://gist.github.com/luka-j/2c1230dea9f24c3a9b9cb30d661bb02e}{My notes are available on Gist.}}
+{\contentFont I've attended one of the largest Java conferences, learning about the future of Java, trends in microservice development in 2020, best testing practices and pathways to cloud native apps. \cvLink{https://gist.github.com/luka-j/2c1230dea9f24c3a9b9cb30d661bb02e}{My notes are available on Gist.}}
 \end{minipage}\newline%
 %
 % Scholarships
-%
+%   
 \begin{minipage}[t]{\linewidth}\vspace{\sectionTopmargin}
-{\alignRight\titleFont\light SCOLARSHIPS}\linebreak\newline
+{\alignRight\titleFont\light SCHOLARSHIPS}\linebreak\newline
 
 \vspace{\rContentTopMargin}
 {\contentFont\textbf{National scholarship for students}\linebreak (2019/2020, 2020/2021), awarded to higher education students which maintain exceptional GPA.}\alignRight\linebreak
 {\contentFont\textbf{???} (2020/2021), ???.}
-\end{minipage}
+\end{minipage}\newline
 % End right column
 \end{minipage}
+%
 % End page 1
+%
+%
+% PAGE 2
+%
+% Left column
+\begin{minipage}[t]{\leftColWidth}\vspace{\pageTwoTopMargin}
+%
+% Selected projects
+%
+\begin{minipage}[t]{\linewidth}
+{\titleFont\light SELECTED PROJECTS}\newline
+
+\vspace{\titleBottomMargin}
+{\subtitleFont\bold STORIES \extraLight\scshape| Library \& Android app \href{https://github.com/luka-j/stories}{\faGithub} \href{https://play.google.com/store/apps/details?id=rs.lukaj.android.stories}{\faAndroid}}\newline%There's no \faGooglePlay :/
+
+\vspace{\ribbonTopMargin}
+\ribbonJava \ribbonAndroid \ribbonPlay \ribbonPostgres\newline
+
+{\contentFont App for creating, sharing and playing choose-your-adventure stories. I’ve designed a simple procedural language for storytelling and implemented a platform-agnostic interpreter (open source). Android app (proprietary) features a code editor, a visual story editor and an online marketplace. It won Special prize for innovativity at Telekom Srbija Regional App Challenge 2018.}
+\end{minipage}\newline%
+%
+\begin{minipage}[t]{\linewidth}\vspace{\subsectionSpace}
+{\subtitleFont\bold NOTEKEEPER \extraLight\scshape| Android app \href{https://play.google.com/store/apps/details?id=rs.luka.android.studygroup}{\faAndroid}}\newline
+
+\vspace{\ribbonTopMargin}
+\ribbonJava \ribbonAndroid \ribbonPlay \ribbonPostgres\newline
+
+{\contentFont Productivity and collaboration app for groups of students attending the same school. Provides a streamlined way for collecting and sharing notes, questions and multimedia content for different courses. Includes course organizer and exam calendar. The app won \nth{2} prize at Sixth mt:s App competition.}
+\end{minipage}\newline%
+%
+\begin{minipage}[t]{\linewidth}\vspace{\subsectionSpace}
+{\subtitleFont\bold UPIS SUITE \extraLight\scshape| Desktop \& Web apps \href{https://github.com/luka-j/UpisScraper}{\faGithub} \href{https://github.com/luka-j/UpisStats}{\faGithub} \href{https://github.com/luka-j/UpisDesktop}{\faGithub}}\newline
+
+\vspace{\ribbonTopMargin}
+\ribbonJava \ribbonPlay \ribbonSwing \ribbonPostgres \ribbonJavascript\newline
+
+{\contentFont Three apps designed to work together in order to collect and interpret data about Serbian primary schools. I've built a scraper which collects students’ grades, graduation exam results and wishlists, enrolment simulator with custom rules support, SQL-like data plotting language, web frontend for plots, performant plotter in Swing (able to plot hundreds of thousands of points and efficiently add points or resize panel) and a desktop point-and-click interface for constructing queries. Data and code is freely available on my GitHub.}
+\end{minipage}\newline%
+% TODO Chat Surveys (RAF Hakaton)
+% TODO Video compressor
+% TODO (maybe?) Lab inventory
+% TODO CV
+% End left column
+\end{minipage}
 \end{document}

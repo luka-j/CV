@@ -5,7 +5,7 @@
 \usepackage[default]{lato}
 \usepackage{raleway}
 \usepackage{fontawesome}
-\usepackage{xcolor}
+\usepackage[dvipsnames]{xcolor}
 \usepackage{soul}
 
 \usepackage{hyperref}
@@ -19,6 +19,8 @@
 \usepackage{varwidth}
 \usepackage{pbox}
 \usepackage[super]{nth}
+\usepackage{ocgx}
+\usepackage{lipsum}
 
 \renewcommand{\ULdepth}{1.8pt}
 \contourlength{0.8pt}
@@ -71,21 +73,29 @@
 \def\miniSubtitleTopMargin{3mm}
 \def\twoColMiniSubtitleTopMargin{-10mm}
 \def\contentTopMarginAlt{1mm}
-\def\subsectionSpace{5mm}
+\def\subsectionSpace{4mm}
 \def\contentTopMargin{-7mm}
 \def\sectionTopmargin{7mm}
 \def\columnTopMargin{-3mm}
 \def\rContentTopMargin{-7mm}
-\def\pageTwoTopMargin{1mm}
+\def\pageTwoTopMargin{0mm}
 \def\ribbonTopMargin{-3mm}
 \def\ribbonSpace{1mm}
+\def\ribbonBottomMargin{-1mm}
 
 \def\ribbonJava{\ribbon{orange}{Java}}
 \def\ribbonAndroid{\ribbon{green}{Android}}
 \def\ribbonPlay{\ribbon{lime}{Play! Framework}}
 \def\ribbonPostgres{\ribbon{violet}{PostgreSQL}}
-\def\ribbonSwing{\ribbon{blue}{Swing}}
+\def\ribbonSwing{\ribbon{brown}{Swing}}
 \def\ribbonJavascript{\ribbon{yellow}{Javascript}}
+\def\ribbonR{\ribbon{blue}{R}}
+\def\ribbonSpringBoot{\ribbon{OliveGreen}{Spring Boot}}
+\def\ribbonKotlin{\ribbon{red}{Kotlin}}
+\def\ribbonFfmpeg{\ribbon{olive}{ffmpeg}}
+\def\ribbonLatex{\ribbon{teal}{\LaTeX}}
+\def\ribbonFontAwesome{\ribbon{cyan}{Font Awesome}}
+\def\ribbonThymeleaf{\ribbon{ForestGreen}{Thymeleaf}}
 
 \begin{document}\noindent
 %
@@ -292,17 +302,9 @@ During the course of my studies, I've developed a fully configurable ballistic p
 
 \vspace{\ribbonTopMargin}
 \ribbonJava \ribbonAndroid \ribbonPlay \ribbonPostgres\newline
+\vspace{\ribbonBottomMargin}
 
 {\contentFont App for creating, sharing and playing choose-your-adventure stories. I’ve designed a simple procedural language for storytelling and implemented a platform-agnostic interpreter (open source). Android app (proprietary) features a code editor, a visual story editor and an online marketplace. It won Special prize for innovativity at Telekom Srbija Regional App Challenge 2018.}
-\end{minipage}\newline%
-%
-\begin{minipage}[t]{\linewidth}\vspace{\subsectionSpace}
-{\subtitleFont\bold NOTEKEEPER \extraLight\scshape| Android app \href{https://play.google.com/store/apps/details?id=rs.luka.android.studygroup}{\faAndroid}}\newline
-
-\vspace{\ribbonTopMargin}
-\ribbonJava \ribbonAndroid \ribbonPlay \ribbonPostgres\newline
-
-{\contentFont Productivity and collaboration app for groups of students attending the same school. Provides a streamlined way for collecting and sharing notes, questions and multimedia content for different courses. Includes course organizer and exam calendar. The app won \nth{2} prize at Sixth mt:s App competition.}
 \end{minipage}\newline%
 %
 \begin{minipage}[t]{\linewidth}\vspace{\subsectionSpace}
@@ -310,13 +312,109 @@ During the course of my studies, I've developed a fully configurable ballistic p
 
 \vspace{\ribbonTopMargin}
 \ribbonJava \ribbonPlay \ribbonSwing \ribbonPostgres \ribbonJavascript\newline
+\vspace{\ribbonBottomMargin}
 
-{\contentFont Three apps designed to work together in order to collect and interpret data about Serbian primary schools. I've built a scraper which collects students’ grades, graduation exam results and wishlists, enrolment simulator with custom rules support, SQL-like data plotting language, web frontend for plots, performant plotter in Swing (able to plot hundreds of thousands of points and efficiently add points or resize panel) and a desktop point-and-click interface for constructing queries. Data and code is freely available on my GitHub.}
+{\contentFont Three apps designed to work together in order to collect and interpret data about Serbian primary schools. I've built a scraper which collects students’ grades and graduation data, enrolment simulator with support for custom rules, SQL-like data plotting language, web frontend for plots, performant plotter in Swing (able to handle and modify $~10^5$ points) and a visual query builder for desktop. Data and code is freely available on my GitHub.}
 \end{minipage}\newline%
-% TODO Chat Surveys (RAF Hakaton)
-% TODO Video compressor
-% TODO (maybe?) Lab inventory
-% TODO CV
+%
+\begin{minipage}[t]{\linewidth}\vspace{\subsectionSpace}
+{\subtitleFont\bold CHAT SURVEYS \extraLight\scshape| Web apps \href{https://github.com/Runtime-T-error}{\faGithub}}\newline
+
+\vspace{\ribbonTopMargin}
+\ribbonR \ribbonPostgres \ribbonJava \ribbonSpringBoot\newline
+\vspace{\ribbonBottomMargin}
+
+{\contentFont A set of apps which transform surveys to conversational format, using Facebook messages as proof of concept. My role was focused on interpreting existing engagement data and building dashbord for future analytics in R's shiny framework, supporting simple plots as well as inference methods such as linear regression and PCA. The project won \nth{3} prize at RAF Hakaton 2019.}
+\end{minipage}\newline%
+%
+\begin{minipage}[t]{\linewidth}\vspace{\subsectionSpace}
+{\subtitleFont\bold VIDEO COMPRESSOR \extraLight\scshape| Web app \href{https://github.com/luka-j/MediaCompressor}{\faGithub}}\newline
+
+\vspace{\ribbonTopMargin}
+\ribbonKotlin \ribbonSpringBoot \ribbonPostgres \ribbonFfmpeg\newline
+\vspace{\ribbonBottomMargin}
+
+{\contentFont A web app which transcodes videos using x265 codec and applies size optimizations for video and audio data. It can use one or more worker nodes to speed up the process, as well as act as a worker for configured master nodes.}
+\end{minipage}\newline%
+%
+\begin{minipage}[t]{\linewidth}\vspace{\subsectionSpace}
+{\subtitleFont\bold CV \extraLight\scshape| Interactive document \href{https://github.com/luka-j/CV}{\faGithub}}\newline
+
+\vspace{\ribbonTopMargin}
+\ribbonLatex \ribbonFontAwesome \newline
+\vspace{\ribbonBottomMargin}
+
+{\contentFont I've designed, made-up and built this very document on top of \LaTeX's \texttt{minimal} document class. It makes use of some PDF features which are not universally supported (e.g. in browsers)—best viewed in a full-fledged reader.}
+\end{minipage}\newline
+%
+% EVEN MORE PROJECTS
+%
+\begin{minipage}{\linewidth}\vspace{5mm}
+{\titleFont\light EVEN MORE PROJECTS}\vspace{1mm}\newline
+{\subtitleFont \light CLICK THE \switchocg{HelpText}{\faChevronCircleRight}}\newline
+
+\vspace{\titleBottomMargin}
+{\subtitleFont\bold NOTEKEEPER \extraLight\scshape| Android app \href{https://play.google.com/store/apps/details?id=rs.luka.android.studygroup}{\faAndroid} \switchocg{NotekeeperText}{\faChevronCircleRight}}\newline
+
+\vspace{\ribbonTopMargin}
+\ribbonJava \ribbonAndroid \ribbonPlay \ribbonPostgres\newline
+\end{minipage}\newline%
+%
+\begin{minipage}{\linewidth}
+{\subtitleFont\bold\scshape MinimalHttpClient \extraLight\scshape| Java library \href{https://github.com/luka-j/MinimalHttpClient}{\faGithub} \switchocg{HttpClientText}{\faChevronCircleRight}}\newline
+
+\vspace{\ribbonTopMargin}
+\ribbonJava\newline
+\end{minipage}\newline%
+%
+\begin{minipage}{\linewidth}
+{\subtitleFont\bold LAB INVENTORY \extraLight\scshape| Web app \href{https://github.com/luka-j/laboratorija-inventar}{\faGithub} \switchocg{LabInventoryText}{\faChevronCircleRight}}\newline
+
+\vspace{\ribbonTopMargin}
+\ribbonKotlin \ribbonSpringBoot \ribbonPostgres \ribbonThymeleaf \newline
+\end{minipage}\newline%
+%
+\begin{minipage}{\linewidth}
+{\subtitleFont\bold\scshape BG BUS \extraLight\scshape| Android app \href{https://github.com/luka-j/BgBus}{\faGithub} \switchocg{BgBusText}{\faChevronCircleRight}}\newline
+
+\vspace{\ribbonTopMargin}
+\ribbonJava \ribbonAndroid \newline
+\end{minipage}\newline%
 % End left column
+\end{minipage}
+%
+%
+% RIGHT COLUMN
+%
+%
+\hfill
+\begin{minipage}[t]{\rightColWidth}\vspace{\pageTwoTopMargin}
+%
+% Tech
+%
+\begin{minipage}[t]{\linewidth}
+{\alignRight\titleFont\light COMPETITIONS}\linebreak\newline
+\end{minipage}\newline%
+%
+% More project descriptions
+%
+\rlap{\begin{ocg}{OCG 0}{HelpText}{0}
+  {\parbox{\linewidth}{\contentFont Great, it works! You can use the \faChevronCircleRight next to project name to see its description. Click the same arrow again to close. Or you can use this one: \hideocg{HelpText}{\faChevronCircleLeft}}}
+\end{ocg}\newline}
+\rlap{\begin{ocg}{OCG 1}{NotekeeperText}{0}
+  {\parbox{\linewidth}{\contentFont Productivity and collaboration app for groups of students attending the same school. Provides a streamlined way for collecting and sharing notes, questions and multimedia content for different courses. Includes course organizer and exam calendar. The app won \nth{2} prize at Sixth mt:s App competition.\hideocg{NotekeeperText}{\faChevronCircleLeft}}}
+\end{ocg}\newline}
+\rlap{\begin{ocg}{OCG 2}{HttpClientText}{0}
+  {\parbox{\linewidth}{\contentFont Lorem ipsum dolor sit amet... this is TODO\hideocg{HttpClientText}{\faChevronCircleLeft}}}
+\end{ocg}\newline}
+\rlap{\begin{ocg}{OCG 3}{LabInventoryText}{0}
+  {\parbox{\linewidth}{\contentFont Lorem ipsum dolor sit amet... this is TODO\hideocg{LabInventoryText}{\faChevronCircleLeft}}}
+\end{ocg}\newline}
+\rlap{\begin{ocg}{OCG 4}{BgBusText}{0}
+  {\parbox{\linewidth}{\contentFont Lorem ipsum dolor sit amet... this is TODO\hideocg{BgBusText}{\faChevronCircleLeft}}}
+\end{ocg}\newline}
+% {\begin{ocg}{OCG 100}{DummyWhiteBox}{0}
+%   \framebox(200,100){}
+% \end{ocg}}
 \end{minipage}
 \end{document}

@@ -44,12 +44,13 @@
 \def\miniDateFont{\fontfamily{Raleway-TLF}\fontsize{13}{15}\color{dark-gray}\scshape}
 \def\ribbonFont{\fontfamily{Raleway-TLF}\fontsize{12}{14}}
 \def\contentFont{\fontsize{12}{14}}
+\def\largeContentFont{\fontsize{13}{15}}
+\def\rSubtitleFont{\fontfamily{Raleway-TLF}\fontsize{14}{16}}
+\def\rSubSubtitleFont{\fontfamily{Raleway-TLF}\fontsize{13}{15}}
 
 \def\linkText#1{\color{very-dark-gray}\prettyUline{#1}}
 \def\cvLink#1#2{\href{#1}{\linkText{#2}}} % doesn't support line breaks — keep link text short!
 
-\def\rSubtitleFont{\fontfamily{Raleway-TLF}\fontsize{14}{16}}
-\def\rSubSubtitleFont{\fontfamily{Raleway-TLF}\fontsize{13}{15}}
 
 \def\extraLight{\fontseries{el}\selectfont}
 \def\light{\fontseries{l}\selectfont}
@@ -90,6 +91,7 @@
 \def\ribbonSwing{\ribbon{brown}{Swing}}
 \def\ribbonJavascript{\ribbon{yellow}{Javascript}}
 \def\ribbonR{\ribbon{blue}{R}}
+\def\ribbonTidyverse{\ribbon{purple}{Tidyverse}}
 \def\ribbonSpringBoot{\ribbon{OliveGreen}{Spring Boot}}
 \def\ribbonKotlin{\ribbon{red}{Kotlin}}
 \def\ribbonFfmpeg{\ribbon{olive}{ffmpeg}}
@@ -153,10 +155,10 @@
 \vfill\vspace{\dateTopMargin}{\dateFont\extraLight Aug 2019 -- present\alignRight}\linebreak\newline
 
 \vspace{\twoColMiniSubtitleTopMargin}
-\begin{minipage}[t]{0.45\linewidth}
+\begin{minipage}[t]{0.5\linewidth}
 {\miniSubtitleFont\bold JUNIOR\\\miniDateFont\extraLight Oct 2019 -- Dec 2020 }
 \end{minipage}
-\begin{minipage}[t]{0.3\linewidth}
+\begin{minipage}[t]{0.4\linewidth}
 {\miniSubtitleFont\bold INTERN\\\miniDateFont\extraLight Aug -- Oct 2019 }
 \end{minipage}\newline
 
@@ -192,7 +194,7 @@ During the course of my studies, I've developed a fully configurable ballistic p
 {\vfill\vspace{\dateTopMargin}\dateFont\extraLight Sep 2014 -- Jun 2018\alignRight}\linebreak\newline
 
 \vspace{\contentTopMargin}
-{\contentFont I graduated from a school with High National Distinction status, specialized for mathematics and related disciplines, with 5/5 grade. My graduation thesis on data scraping and analysis of national primary school graduation results was selected as one of the best informatics theses for school year 2017/18.} % todo links
+{\contentFont I graduated from a school with High National Distinction status, specialized for mathematics and related disciplines, with 5/5 grade. My \cvLink{https://www.mg.edu.rs/uploads/files/images/stories/dokumenta/maturski/luka-jovicic.pdf}{graduation thesis} on data scraping and analysis of national primary school graduation results was selected as \cvLink{https://www.mg.edu.rs/sr/nastava/najbolji-maturski-radovi}{one of the best informatics theses} for school year 2017/18.}
 \end{minipage}\newline%
 %
 % Extracurricular activities
@@ -321,7 +323,7 @@ During the course of my studies, I've developed a fully configurable ballistic p
 {\subtitleFont\bold CHAT SURVEYS \extraLight\scshape| Web apps \href{https://github.com/Runtime-T-error}{\faGithub}}\newline
 
 \vspace{\ribbonTopMargin}
-\ribbonR \ribbonPostgres \ribbonJava \ribbonSpringBoot\newline
+\ribbonR \ribbonTidyverse \ribbonPostgres \ribbonJava \ribbonSpringBoot\newline
 \vspace{\ribbonBottomMargin}
 
 {\contentFont A set of apps which transform surveys to conversational format, using Facebook messages as proof of concept. My role was focused on interpreting existing engagement data and building dashbord for future analytics in R's shiny framework, supporting simple plots as well as inference methods such as linear regression and PCA. The project won \nth{3} prize at RAF Hakaton 2019.}
@@ -350,7 +352,7 @@ During the course of my studies, I've developed a fully configurable ballistic p
 % EVEN MORE PROJECTS
 %
 \begin{minipage}{\linewidth}\vspace{5mm}
-{\titleFont\light EVEN MORE PROJECTS}\vspace{1mm}\newline
+{\titleFont\light MORE PROJECTS}\vspace{1mm}\newline
 {\subtitleFont \light CLICK THE \switchocg{HelpText}{\faChevronCircleRight}}\newline
 
 \vspace{\titleBottomMargin}
@@ -390,29 +392,64 @@ During the course of my studies, I've developed a fully configurable ballistic p
 \hfill
 \begin{minipage}[t]{\rightColWidth}\vspace{\pageTwoTopMargin}
 %
-% Tech
+% Competitons
 %
 \begin{minipage}[t]{\linewidth}
 {\alignRight\titleFont\light COMPETITIONS}\linebreak\newline
+
+{\alignRight\rSubtitleFont\bold RAF Hackathon \light (team, 2020)}\newline
+{\alignRight\largeContentFont\medium \nth{3} prize for \cvLink{https://github.com/Runtime-T-error}{Chat Surveys}}\newline
+
+{\alignRight\rSubtitleFont\bold WATFOI API Design \alignRight Workshop \light (2020)}\newline
+{\alignRight\largeContentFont\medium \nth{1} prize for API design and spec}\newline
+
+{\alignRight\rSubtitleFont\bold Telekom Srbija Regional App \alignRight Challenge \light (2018)}\newline
+{\alignRight\largeContentFont\medium Special prize for \cvLink{https://play.google.com/store/apps/details?id=rs.lukaj.android.stories}{Stories}}\newline
+
+{\alignRight\rSubtitleFont\bold RAF Challenge \light (2017)}\newline
+{\alignRight\largeContentFont\medium Finalist with \cvLink{https://github.com/luka-j/UpisDesktop}{UpisDesktop}}\newline
+
+{\alignRight\rSubtitleFont\bold MatHackathon \light (team, 2017)}\newline
+{\alignRight\largeContentFont\medium Finalist with an Arduino smart \alignRight home app}\newline
+
+{\alignRight\rSubtitleFont\bold mt:s App Competition \light (2016)}\newline
+{\alignRight\largeContentFont\medium \nth{2} prize for \cvLink{https://play.google.com/store/apps/details?id=rs.luka.android.studygroup}{Notekeeper}}\newline
+
+{\alignRight\rSubtitleFont\bold mt:s App Competition \light (2015)}\newline
+{\alignRight\largeContentFont\medium \nth{2} prize for \cvLink{https://github.com/luka-j/BgBus}{BgBus}}\newline
+
+{\alignRight\rSubtitleFont\bold National programming \alignRight competitions \light (2014--2017)}\newline
+{\alignRight\largeContentFont\medium Qualified to the national level}\newline
+
+{\alignRight\rSubtitleFont\bold National programming \alignRight competitions \light (2012--2014)}\newline
+{\alignRight\largeContentFont\medium Qualified to Serbian Informatics \alignRight Olympiad}\newline
+
+{\alignRight\rSubtitleFont\bold National programming \alignRight competitions \light (2011/12)}\newline
+{\alignRight\largeContentFont\medium \nth{3} prize on National competition}\newline
+
+{\parbox{\linewidth}{\color{white}\fontsize{8}{9}\selectfont Hi there! I just need some white padding here, so why not use it :) You see, rlap, combined with PDF OCGs, is \emph{very} awkward to work with. It seems to have no respect for vspaces, paddings, even phantom text. White text works, so---yay, I guess! You seem to be either quite bored or quite interested. How did I know? Well, you're reading white text, duh. Let me help---hit me up on LinkedIn or send me an email so we can talk about tech, software engineering career, school prospects, music, creative writing, science, psychology, languages,... anything, really (I'd put links here, but they'd break the invisibility). I hope you enjoyed reading this as much as I did making it (minus the frustration of aligning everything and rephrasing sentences so they'd fit "just right"). Seems like we're running of space here: see ya!}}
 \end{minipage}\newline%
 %
 % More project descriptions
 %
 \rlap{\begin{ocg}{OCG 0}{HelpText}{0}
-  {\parbox{\linewidth}{\contentFont Great, it works! You can use the \faChevronCircleRight next to project name to see its description. Click the same arrow again to close. Or you can use this one: \hideocg{HelpText}{\faChevronCircleLeft}}}
+  {\parbox{\linewidth}{\contentFont Great, it works! You can use the \faChevronCircleRight \ next to a project name to see its description. Click the same arrow again to close. Or you can use this one: \hideocg{HelpText}{\faChevronCircleLeft}}}
 \end{ocg}\newline}
 \rlap{\begin{ocg}{OCG 1}{NotekeeperText}{0}
-  {\parbox{\linewidth}{\contentFont Productivity and collaboration app for groups of students attending the same school. Provides a streamlined way for collecting and sharing notes, questions and multimedia content for different courses. Includes course organizer and exam calendar. The app won \nth{2} prize at Sixth mt:s App competition.\hideocg{NotekeeperText}{\faChevronCircleLeft}}}
+  {\parbox{\linewidth}{\contentFont Productivity and collaboration app for groups of students attending the same school. Provides a streamlined way for collecting and sharing notes, questions and multimedia content for different courses. Includes course organizer and exam calendar. The app won \nth{2} prize at Sixth mt:s App competition (2016).\hideocg{NotekeeperText}{\faChevronCircleLeft}}}
 \end{ocg}\newline}
 \rlap{\begin{ocg}{OCG 2}{HttpClientText}{0}
-  {\parbox{\linewidth}{\contentFont Lorem ipsum dolor sit amet... this is TODO\hideocg{HttpClientText}{\faChevronCircleLeft}}}
+  {\parbox{\linewidth}{\contentFont Implementation of HTTP/1.1 protocol from the ground up, using plain TCP sockets in Java. Provides an option to manually configure connection pool and reuses sockets wherever appropriate. Exposes both blocking (with timeout) and non-blocking (callback-based) API. Provides common abstractions for sending and receiving textual, raw and file content. Transparently handles redirects, content and transfer encodings.\hideocg{HttpClientText}{\faChevronCircleLeft}}}
 \end{ocg}\newline}
 \rlap{\begin{ocg}{OCG 3}{LabInventoryText}{0}
-  {\parbox{\linewidth}{\contentFont Lorem ipsum dolor sit amet... this is TODO\hideocg{LabInventoryText}{\faChevronCircleLeft}}}
+  {\parbox{\linewidth}{\contentFont Web app for managing laboratory inventory, used in a local hospital. Tailored specifically for their needs, it tremendously speeds up inventory tracking and reporting for medical and non-medical supplies. UI was specifically built to be intuitive to non-technical users and print-friendly. \hideocg{LabInventoryText}{\faChevronCircleLeft}}}
 \end{ocg}\newline}
 \rlap{\begin{ocg}{OCG 4}{BgBusText}{0}
-  {\parbox{\linewidth}{\contentFont Lorem ipsum dolor sit amet... this is TODO\hideocg{BgBusText}{\faChevronCircleLeft}}}
+  {\parbox{\linewidth}{\contentFont Android app which simplifies navigation in Belgrade on foot and using public transport. It is built upon a few custom heuristic algorithms which take into account time of day, type of transport and how often it is deployed. After algorithms are run with different parameters, four best results are displayed to the user and drawn on the map. The app was awarded \nth{2} prize at Fifth mt:s App Competition (2015). \hideocg{BgBusText}{\faChevronCircleLeft}}}
 \end{ocg}\newline}
+
+\vspace{7mm}
+{\contentFont Curious about even more projects? Check out \cvLink{https://github.com/luka-j?tab=repositories}{my GitHub!}}
 % {\begin{ocg}{OCG 100}{DummyWhiteBox}{0}
 %   \framebox(200,100){}
 % \end{ocg}}

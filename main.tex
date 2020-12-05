@@ -22,9 +22,9 @@
 \usepackage{ocgx}
 \usepackage{lipsum}
 
+% Fancy underline: basically, draw underline under phantom text, then draw real text over it (overlapping the phantom) with white contour, so the contour goes over the underline insted of intersecting it, making "gaps" in underline for letters which have parts below baseline
 \renewcommand{\ULdepth}{1.8pt}
 \contourlength{0.8pt}
-
 \newcommand{\prettyUline}[1]{% phantom and countour (both!) operate in restricted horizontal environment, i.e. don't support line breaks; todo fix it sometime 
   \uline{\phantom{#1}}%
   \llap{\contour{white}{#1}}%
@@ -43,15 +43,17 @@
 \def\dateFont{\fontfamily{Raleway-TLF}\fontsize{15}{17}\scshape}
 \def\miniDateFont{\fontfamily{Raleway-TLF}\fontsize{13}{15}\color{dark-gray}\scshape}
 \def\ribbonFont{\fontfamily{Raleway-TLF}\fontsize{12}{14}}
-\def\contentFont{\fontsize{12}{14}}
+\def\contentFont{\fontsize{11}{13}}
 \def\largeContentFont{\fontsize{13}{15}}
 \def\rSubtitleFont{\fontfamily{Raleway-TLF}\fontsize{14}{16}}
 \def\rSubSubtitleFont{\fontfamily{Raleway-TLF}\fontsize{13}{15}}
 
+% link formating I use through CV
 \def\linkText#1{\color{very-dark-gray}\prettyUline{#1}}
 \def\cvLink#1#2{\href{#1}{\linkText{#2}}} % doesn't support line breaks — keep link text short!
 
 
+% various font weights
 \def\extraLight{\fontseries{el}\selectfont}
 \def\light{\fontseries{l}\selectfont}
 \def\semiBold{\fontseries{sb}\selectfont}
@@ -59,9 +61,7 @@
 \def\medium{\fontseries{m}\selectfont}
 \def\alignRight{\null\hfill}
 
-\newtcolorbox{ribbonBox}[1]{colframe=#1!75!black, colback=white, hbox, boxsep=0mm, left=0.4mm, right=0.4mm, text height=0.8em}
-\def\ribbon#1#2{\pbox{5cm}{\begin{ribbonBox}{#1}{\ribbonFont\medium #2}\end{ribbonBox}}\hspace{\ribbonSpace}}
-
+% margins and other spaces
 \def\iconsTopMargin{-15mm}
 \def\iconsSpaceBetweenRows{-3mm}
 \def\iconsMinipageWidth{0.333\linewidth}
@@ -84,6 +84,10 @@
 \def\ribbonSpace{1mm}
 \def\ribbonBottomMargin{-1mm}
 
+
+\newtcolorbox{ribbonBox}[1]{colframe=#1!75!black, colback=white, hbox, boxsep=0mm, left=0.4mm, right=0.4mm, text height=0.8em}
+\def\ribbon#1#2{\pbox{5cm}{\begin{ribbonBox}{#1}{\ribbonFont\medium #2}\end{ribbonBox}}\hspace{\ribbonSpace}}
+
 \def\ribbonJava{\ribbon{orange}{Java}}
 \def\ribbonAndroid{\ribbon{green}{Android}}
 \def\ribbonPlay{\ribbon{lime}{Play! Framework}}
@@ -101,7 +105,7 @@
 
 \begin{document}\noindent
 %
-% HEADER
+% HEADER (title)
 %
 \begin{center}
 {\headerFont\extraLight LUKA \light JOVIČIĆ}
@@ -110,7 +114,7 @@
 % Social links
 %
 \begin{center}
-\begin{minipage}[b]{\iconsMinipageWidth}
+\begin{minipage}[b]{\iconsMinipageWidth} %I're using minipages for horizontal alignment in the whole document
 \faHome\hspace{\iconSpaceBetweenText}Pančevo, Serbia
 \end{minipage}%
 \begin{minipage}[b]{\iconsMinipageWidth}
@@ -119,7 +123,7 @@
 \end{center}
 \end{minipage}%
 \begin{minipage}[b]{\iconsMinipageWidth}
-\alignRight\faGlobe\hspace{\iconSpaceBetweenText}\href{https://luka-j.github.io}{luka-j.github.io}
+\alignRight\faGlobe\hspace{\iconSpaceBetweenText}\href{https://luka-j.github.io}{luka-j.github.io} %I stopped updating this at some point, I should probably continue sometime (but for now I find LaTeX more fun)
 \end{minipage}\newline%
 %
 \vspace{\iconsSpaceBetweenRows}
@@ -132,7 +136,7 @@
 \end{center}
 \end{minipage}%
 \begin{minipage}[b]{\iconsMinipageWidth}
-\alignRight\faLinkedin\hspace{\iconSpaceBetweenText}\href{https://linkedin.com/in/luka-j}{linkedin.com/in/luka-j}
+\alignRight\faLinkedin\hspace{\iconSpaceBetweenText}\href{https://linkedin.com/in/luka-j}{linkedin.com/in/luka-j} %it makes sense that linkedin comes front and center, but I find this arrangement aesthetically more pleasing: stackoverflow is the longest link, so it goes below the longest link in the first row
 \end{minipage}\newline
 \end{center}
 
@@ -141,7 +145,7 @@
 \hspace{-0.33in}
 \rule{1.1\linewidth}{0.2mm}
 %
-% Left column
+% LEFT COLUMN
 %
 %
 % Experience
@@ -162,9 +166,9 @@
 {\miniSubtitleFont\bold INTERN\\\miniDateFont\extraLight Aug -- Oct 2019 }
 \end{minipage}\newline
 
-\vspace{\contentTopMarginAlt}
+\vspace{\contentTopMarginAlt} % this is quite an unique box because this two-col split for Junior and Intern. While interning I was mostly working on API Gateway, later the time was split between API Gateway and maintaining and upgrading other products (analytics, alerting, circuit breaker, containerization, http client and internal utils lib). After that I got reassigned to the strike team working on new projects.
 {\contentFont As a part of the core engine team, my work usually consisted of maintaining and upgrading the heart of the platform which processes over 1.5 million transactions daily. My main projects were building an API Gateway system from ground up and containerizing, upgrading and maintaining our CI/CD pipeline. I was also a part of a strike team which developed new microservices and adapted existing infrastructure for emerging business needs.}
-\end{minipage}\newline%
+\end{minipage}\newline% I don't want any kind of space here
 %
 \begin{minipage}[t]{\linewidth}\vspace{\subsectionSpace}
 {\subtitleFont\bold WIKI AMBASSADOR \extraLight\scshape | Wikimedia Serbia}\newline
@@ -234,7 +238,7 @@ During the course of my studies, I've developed a fully configurable ballistic p
 {\alignRight\titleFont\light TECH STACK}\linebreak\newline
 
 \vspace{\contentTopMargin}
-{\contentFont\bold Main toolbox: \medium Java, Spring Boot, Docker, Jenkins, PostgreSQL, Kotlin}
+{\contentFont\bold Main toolbox: \medium Java, Spring Boot, Docker, Jenkins, PostgreSQL, Kotlin} %\medium screws over my fonts, but in this case it actually looks okay: it's a bit bigger than the rest
 
 \vspace{2mm}
 {\contentFont\bold Familiar with: \medium C, Bash, Python, R, Play! Framework, Android, WildFly, JavaScript, HTTP, \LaTeX}
@@ -271,7 +275,7 @@ During the course of my studies, I've developed a fully configurable ballistic p
 {\alignRight\rSubSubtitleFont\light Online conference, 2020}\linebreak\newline
 
 \vspace{\rContentTopMargin}
-{\contentFont I've attended one of the largest Java conferences, learning about the future of Java, trends in microservice development in 2020, best testing practices and pathways to cloud native apps. \cvLink{https://gist.github.com/luka-j/2c1230dea9f24c3a9b9cb30d661bb02e}{My notes are available on Gist.}}
+{\contentFont I've attended one of the largest Java conferences, learning about the future of Java, trends in microservice development in 2020, best testing practices and pathways to cloud native apps. \cvLink{https://gist.github.com/luka-j/2c1230dea9f24c3a9b9cb30d661bb02e}{My notes are available on Gist.}} % I should probably clean up those notes
 \end{minipage}\newline%
 %
 % Scholarships
@@ -400,18 +404,18 @@ During the course of my studies, I've developed a fully configurable ballistic p
 {\alignRight\rSubtitleFont\bold RAF Hackathon \light (team, 2020)}\newline
 {\alignRight\largeContentFont\medium \nth{3} prize for \cvLink{https://github.com/Runtime-T-error}{Chat Surveys}}\newline
 
-{\alignRight\rSubtitleFont\bold WATFOI API Design \alignRight Workshop \light (2020)}\newline
-{\alignRight\largeContentFont\medium \nth{1} prize for API design and spec}\newline
-
+% {\alignRight\rSubtitleFont\bold WATFOI API Design \alignRight Workshop \light (2020)}\newline
+% {\alignRight\largeContentFont\medium \nth{1} prize for API design and spec}\newline
+%
 {\alignRight\rSubtitleFont\bold Telekom Srbija Regional App \alignRight Challenge \light (2018)}\newline
 {\alignRight\largeContentFont\medium Special prize for \cvLink{https://play.google.com/store/apps/details?id=rs.lukaj.android.stories}{Stories}}\newline
 
 {\alignRight\rSubtitleFont\bold RAF Challenge \light (2017)}\newline
 {\alignRight\largeContentFont\medium Finalist with \cvLink{https://github.com/luka-j/UpisDesktop}{UpisDesktop}}\newline
 
-{\alignRight\rSubtitleFont\bold MatHackathon \light (team, 2017)}\newline
-{\alignRight\largeContentFont\medium Finalist with an Arduino smart \alignRight home app}\newline
-
+% {\alignRight\rSubtitleFont\bold MatHackathon \light (team, 2017)}\newline
+% {\alignRight\largeContentFont\medium Finalist with an Arduino smart \alignRight home app}\newline
+%
 {\alignRight\rSubtitleFont\bold mt:s App Competition \light (2016)}\newline
 {\alignRight\largeContentFont\medium \nth{2} prize for \cvLink{https://play.google.com/store/apps/details?id=rs.luka.android.studygroup}{Notekeeper}}\newline
 
@@ -425,33 +429,51 @@ During the course of my studies, I've developed a fully configurable ballistic p
 {\alignRight\largeContentFont\medium Qualified to Serbian Informatics \alignRight Olympiad}\newline
 
 {\alignRight\rSubtitleFont\bold National programming \alignRight competitions \light (2011/12)}\newline
-{\alignRight\largeContentFont\medium \nth{3} prize on National competition}\newline
-
-{\parbox{\linewidth}{\color{white}\fontsize{8}{9}\selectfont Hi there! I just need some white padding here, so why not use it :) You see, rlap, combined with PDF OCGs, is \emph{very} awkward to work with. It seems to have no respect for vspaces, paddings, even phantom text. White text works, so---yay, I guess! You seem to be either quite bored or quite interested. How did I know? Well, you're reading white text, duh. Let me help---hit me up on LinkedIn or send me an email so we can talk about tech, software engineering career, school prospects, music, creative writing, science, psychology, languages,... anything, really (I'd put links here, but they'd break the invisibility). I hope you enjoyed reading this as much as I did making it (minus the frustration of aligning everything and rephrasing sentences so they'd fit "just right"). Seems like we're running of space here: see ya!}}
+{\alignRight\largeContentFont\medium \nth{3} prize on National competition}
 \end{minipage}\newline%
+%
+\begin{minipage}[t]{\linewidth}\vspace{\sectionTopmargin}
+{\alignRight\titleFont\light INTERESTS}\linebreak\newline
+
+\vspace{\contentTopMargin}
+{\contentFont\bold Design: \medium I especially enjoy document design, be it a CV or a \cvLink{https://luka-j.github.io/petnica/poster.pdf}{research poster}. I can usually find my way around Adobe InDesign and Illustrator.} %\medium screws over my fonts, but in this case it actually looks okay: it's a bit bigger than the rest
+
+\vspace{2mm}
+{\contentFont\bold Creative writing: \medium When not writing computer programs or technical documentation, I tend to write a story or two. In 2016, my short story ``Trapped in the Dollhouse'' won \nth{2} prize at \cvLink{http://www.englishbook.rs/aktuelnosti/konkursi/97-pobednici-konkursa-my-english-book-2016}{My English Book competition}.}
+
+\vspace{2mm}
+{\contentFont\bold Philosophy, science, law: \medium Tired of tech talk? Strike up a conversation about paradox of tolerance, statistical inference, or state sovereignty and I'll follow!}
+
+\vspace{-2mm}
+\rule{\linewidth}{0.1mm}
+{\parbox{\linewidth}{\color{white}\fontsize{6.5}{8}\selectfont Hi there! You must be really bored or really interested reading small white text. Let me help: drop me a message and we can talk!}}
+\end{minipage}
 %
 % More project descriptions
 %
-\rlap{\begin{ocg}{OCG 0}{HelpText}{0}
+\noindent
+\rlap{\begin{ocg}{OCG 0}{HelpText}{0} %so basically I use OCG so these things pop up only when appropriate arrow is clicked; I also want all of these boxes to overlap, so I'm using rlap to make them use no space and overlap (but to have their content visible, on click of course). 
   {\parbox{\linewidth}{\contentFont Great, it works! You can use the \faChevronCircleRight \ next to a project name to see its description. Click the same arrow again to close. Or you can use this one: \hideocg{HelpText}{\faChevronCircleLeft}}}
 \end{ocg}\newline}
 \rlap{\begin{ocg}{OCG 1}{NotekeeperText}{0}
+\noindent
   {\parbox{\linewidth}{\contentFont Productivity and collaboration app for groups of students attending the same school. Provides a streamlined way for collecting and sharing notes, questions and multimedia content for different courses. Includes course organizer and exam calendar. The app won \nth{2} prize at Sixth mt:s App competition (2016).\hideocg{NotekeeperText}{\faChevronCircleLeft}}}
 \end{ocg}\newline}
 \rlap{\begin{ocg}{OCG 2}{HttpClientText}{0}
+\noindent
   {\parbox{\linewidth}{\contentFont Implementation of HTTP/1.1 protocol from the ground up, using plain TCP sockets in Java. Provides an option to manually configure connection pool and reuses sockets wherever appropriate. Exposes both blocking (with timeout) and non-blocking (callback-based) API. Provides common abstractions for sending and receiving textual, raw and file content. Transparently handles redirects, content and transfer encodings.\hideocg{HttpClientText}{\faChevronCircleLeft}}}
 \end{ocg}\newline}
 \rlap{\begin{ocg}{OCG 3}{LabInventoryText}{0}
+\noindent
   {\parbox{\linewidth}{\contentFont Web app for managing laboratory inventory, used in a local hospital. Tailored specifically for their needs, it tremendously speeds up inventory tracking and reporting for medical and non-medical supplies. UI was specifically built to be intuitive to non-technical users and print-friendly. \hideocg{LabInventoryText}{\faChevronCircleLeft}}}
 \end{ocg}\newline}
 \rlap{\begin{ocg}{OCG 4}{BgBusText}{0}
+\noindent
   {\parbox{\linewidth}{\contentFont Android app which simplifies navigation in Belgrade on foot and using public transport. It is built upon a few custom heuristic algorithms which take into account time of day, type of transport and how often it is deployed. After algorithms are run with different parameters, four best results are displayed to the user and drawn on the map. The app was awarded \nth{2} prize at Fifth mt:s App Competition (2015). \hideocg{BgBusText}{\faChevronCircleLeft}}}
 \end{ocg}\newline}
 
-\vspace{7mm}
+\vspace{6mm}
+\rule{\linewidth}{0.1mm}
 {\contentFont Curious about even more projects? Check out \cvLink{https://github.com/luka-j?tab=repositories}{my GitHub!}}
-% {\begin{ocg}{OCG 100}{DummyWhiteBox}{0}
-%   \framebox(200,100){}
-% \end{ocg}}
 \end{minipage}
 \end{document}

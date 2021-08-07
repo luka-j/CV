@@ -1,0 +1,30 @@
+% Fancy underline: basically, draw underline under phantom text, then draw real text over it (overlapping the phantom) with white contour, so the contour goes over the underline insted of intersecting it, making "gaps" in underline for letters which have parts below baseline
+\renewcommand{\ULdepth}{1.8pt}
+\contourlength{0.8pt}
+\newcommand{\prettyUline}[1]{% phantom and countour (both!) operate in restricted horizontal environment, i.e. don't support line breaks; todo fix it sometime 
+  \uline{\phantom{#1}}%
+  \llap{\contour{white}{#1}}%
+}
+
+% link formating I use through CV
+\def\linkText#1{\color{very-dark-gray}\prettyUline{#1}}
+\def\cvLink#1#2{\href{#1}{\linkText{#2}}} % doesn't support line breaks — keep link text short!
+
+% RIBBONS
+\newtcolorbox{ribbonBox}[1]{colframe=#1!75!black, colback=white, hbox, boxsep=0mm, left=0.4mm, right=0.4mm, text height=0.8em}
+\def\ribbon#1#2{\pbox{5cm}{\begin{ribbonBox}{#1}{\ribbonFont\medium #2}\end{ribbonBox}}\hspace{\ribbonSpace}}
+
+\def\ribbonJava{\ribbon{orange}{Java}}
+\def\ribbonAndroid{\ribbon{green}{Android}}
+\def\ribbonPlay{\ribbon{lime}{Play! Framework}}
+\def\ribbonPostgres{\ribbon{violet}{PostgreSQL}}
+\def\ribbonSwing{\ribbon{brown}{Swing}}
+\def\ribbonJavascript{\ribbon{yellow}{Javascript}}
+\def\ribbonR{\ribbon{blue}{R}}
+\def\ribbonTidyverse{\ribbon{purple}{Tidyverse}}
+\def\ribbonSpringBoot{\ribbon{OliveGreen}{Spring Boot}}
+\def\ribbonKotlin{\ribbon{red}{Kotlin}}
+\def\ribbonFfmpeg{\ribbon{olive}{ffmpeg}}
+\def\ribbonLatex{\ribbon{teal}{\LaTeX}}
+\def\ribbonFontAwesome{\ribbon{cyan}{Font Awesome}}
+\def\ribbonThymeleaf{\ribbon{ForestGreen}{Thymeleaf}}

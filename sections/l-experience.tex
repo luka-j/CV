@@ -1,28 +1,28 @@
 \begin{minipage}[t]{\linewidth}\vspace{\sectionTopmargin}
-{\titleFont\light EXPERIENCE}\linebreak
+{\titleFont\light I'VE WORKED AS\ldots}\newline
 
 \vspace{\titleBottomMargin}
-{\subtitleFont\bold SOFTWARE ENGINEER \extraLight\scshape | Centili}\newline
+{\subtitleFont\bold SOFTWARE ENGINEER \extraLight\scshape @ Centili}\newline
 \vfill\vspace{\dateTopMargin}{\dateFont\extraLight Aug 2019--present\alignRight}\linebreak\newline
 
-\vspace{\twoColMiniSubtitleTopMargin}
-\begin{minipage}[t]{0.6\linewidth}
-{\miniSubtitleFont\bold JUNIOR\\\miniDateFont\extraLight Oct 2019--Oct 2021 }
-\end{minipage}
-\begin{minipage}[t]{0.4\linewidth}
-{\miniSubtitleFont\bold INTERN\\\miniDateFont\extraLight Aug--Oct 2019 }
-\end{minipage}\newline
-
-\vspace{\contentTopMarginAlt} % this is quite an unique box because this two-col split for Junior and Intern. While interning I was mostly working on API Gateway, later the time was split between API Gateway and maintaining and upgrading other products (analytics, alerting, circuit breaker, containerization, http client and internal utils lib). After that I got reassigned to the strike team working on new projects.
-{\contentFont As a part of the core engine team, I've had the chance to upgrade and maintain a live production system which processes over 1.5 million payment transactions daily. My main projects are building and maintaining a custom API Gateway project and containerizing and upgrading the CI/CD pipelines and monitoring stack. I've also had the chance to work with Cloudflare Workers serverless platform to cut loading time of payment pages for up to 2s. More recently, I was a part of a strike team which developed new microservices for various business needs. I've also taken a significant part in developing a multi-tenant storefront app and adapted existing infrastructure to enable a successful launch on GKE, making it our first service to go live on the cloud. }%
-% {\contentFont \begin{itemize}
-%     \item Worked on maintaining and upgrading the heart of the platform which processes over 1.5 million transactions daily, including migration RMI → HTTP
-%     \item Containerized and upgraded our CI/CD system and pipelines
-%     \item Cloud-nativized our monitoring stack (Prometheus, Alertmanager, Grafana)
-%     \item Built a custom API Gateway system solution from ground up
-%     \item Used Cloudflare Workers to cut loading time of payment pages for up to 2s
-%     \item Part of a strike team which developed new microservices and integrated them into the existing platform
-%     \item Taken a significant part in developing a multi-tenant storefront app and adapting the infrastructure to make a successful launch on GKE, being the first service to go live on the cloud
-% \end{itemize}}
+{\vspace{\contentTopMargin}\contentFont \begin{itemize}
+    \item --Developed a custom API Gateway system and accompanying YAML config format, utilizing it to streamline and serve all Centili's new public APIs.
+    \item --Taken a significant part in developing a multi-tenant storefront app and adapting the infrastructure to make a successful launch on Google Kubernetes Engine, making it the company's first service to go live on the cloud.
+    \item --Migrated parts of a live production system which processes 1.5 million payment transactions daily from RMI to HTTP, and then to cloud.
+    \item --Containerized and upgraded CI/CD, supporting legacy JBoss apps, Spring Boot (Java 11 and Java 17), React and serverless projects (Cloudflare Pages).
+    \item --Migrated the monitoring stack (Prometheus, Alertmanager, Grafana) to K8s.
+    \item --Used Cloudflare Workers to cut loading time of payment pages for up to 2s.
+    \item --Designed and developed a dozen greenfield Spring Boot microservices.
+    \item --Fixed a few bugs and built a few pages using React for our admin dashboard.
+\end{itemize}}
 \end{minipage}\newline% I don't want any kind of space here
 %
+\begin{minipage}[t]{\linewidth}\vspace{\subsectionSpace}%
+{\subtitleFont\bold TEACHING ASSOCIATE \extraLight\scshape @ University of Belgrade, Faculty of Mathematics}\newline
+\vfill\vspace{\dateTopMargin}{\dateFont\extraLight Oct 2022--Oct 2023\alignRight}\linebreak\newline
+
+{\vspace{\contentTopMargin}\contentFont \begin{itemize}
+\item --Taught practical classes and exercises for Computer Networks and Database Programming courses in 2022/23 (total 98 students in my groups).
+\item --Creating and administering practical exams for courses I taught.
+\end{itemize}}%
+\end{minipage}%

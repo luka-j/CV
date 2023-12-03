@@ -13,18 +13,20 @@
 % RIBBONS
 \newtcolorbox{ribbonBox}[1]{colframe=#1!75!black, colback=white, hbox, boxsep=0mm, left=0.4mm, right=0.4mm, text height=0.8em}
 \def\ribbon#1#2{\pbox{5cm}{\begin{ribbonBox}{#1}{\ribbonFont\medium #2}\end{ribbonBox}}\hspace{\ribbonSpace}}
+\newtcolorbox{smallRibbonBox}[1]{colframe=#1!75!black, colback=white, hbox, boxsep=0mm, left=0.3mm, right=0.3mm, text height=0.6em}
+\def\smallRibbon#1#2{\pbox{4cm}{\begin{smallRibbonBox}{#1}{\ribbonFont\medium #2}\end{smallRibbonBox}}\hspace{\ribbonSpace}}
 
-\def\ribbonJava{\ribbon{orange}{Java}}
-\def\ribbonAndroid{\ribbon{green}{Android}}
-\def\ribbonPlay{\ribbon{lime}{Play! Framework}}
-\def\ribbonPostgres{\ribbon{violet}{PostgreSQL}}
-\def\ribbonSwing{\ribbon{brown}{Swing}}
-\def\ribbonJavascript{\ribbon{yellow}{Javascript}}
-\def\ribbonR{\ribbon{blue}{R}}
-\def\ribbonTidyverse{\ribbon{purple}{Tidyverse}}
-\def\ribbonSpringBoot{\ribbon{OliveGreen}{Spring Boot}}
-\def\ribbonKotlin{\ribbon{red}{Kotlin}}
-\def\ribbonFfmpeg{\ribbon{olive}{ffmpeg}}
-\def\ribbonLatex{\ribbon{teal}{\LaTeX}}
-\def\ribbonFontAwesome{\ribbon{cyan}{Font Awesome}}
-\def\ribbonThymeleaf{\ribbon{ForestGreen}{Thymeleaf}}
+\def\ribbonJava{\smallRibbon{orange}{Java}}
+\def\ribbonAndroid{\smallRibbon{green}{Android}}
+\def\ribbonPlay{\smallRibbon{lime}{Play! Framework}}
+\def\ribbonPostgres{\smallRibbon{violet}{PostgreSQL}}
+\def\ribbonSwing{\smallRibbon{brown}{Swing}}
+\def\ribbonJavascript{\smallRibbon{yellow}{Javascript}}
+\def\ribbonR{\smallRibbon{blue}{R}}
+\def\ribbonTidyverse{\smallRibbon{purple}{Tidyverse}}
+\def\ribbonSpringBoot{\smallRibbon{OliveGreen}{Spring Boot}}
+\def\ribbonKotlin{\smallRibbon{red}{Kotlin}}
+\def\ribbonFfmpeg{\smallRibbon{olive}{ffmpeg}}
+\def\ribbonLatex{\smallRibbon{teal}{\LaTeX}}
+\def\ribbonFontAwesome{\smallRibbon{cyan}{Font Awesome}}
+\def\ribbonThymeleaf{\smallRibbon{ForestGreen}{Thymeleaf}}

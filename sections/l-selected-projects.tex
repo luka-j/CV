@@ -1,14 +1,19 @@
 \begin{minipage}[t]{\linewidth}
-{\titleFont\light SELECTED PROJECTS}\newline
+{\titleFont\light PERSONAL PROJECTS}\newline
 
 \vspace{\titleBottomMargin}
-{\subtitleFont\bold STORIES \extraLight\scshape| Library \& Android app \href{https://github.com/luka-j/stories}{\faGithub} \href{https://play.google.com/store/apps/details?id=rs.lukaj.android.stories}{\faAndroid}}\newline%There's no \faGooglePlay :/
+{\subtitleFont\bold STORIES \extraLight\scshape| Library \& Android app \href{https://github.com/luka-j/stories}{\faGithub} \href{https://github.com/luka-j/StoriesApp}{\faGithub}}\newline
 
 \vspace{\ribbonTopMargin}
 \ribbonJava \ribbonAndroid \ribbonPlay \ribbonPostgres\newline
 \vspace{\ribbonBottomMargin}
 
-{\contentFont App for creating, sharing and playing choose-your-adventure stories. I’ve designed a simple procedural language for storytelling and implemented a platform-agnostic interpreter (open source). Android app (proprietary) features a code editor, a visual story editor and an online marketplace. It won Special prize for innovativity at Telekom Srbija Regional App Challenge 2018.}
+{\contentFont \begin{itemize}
+    \item --Built a custom programming language for choose-your-adventure stories.
+    \item --Developed an accompanying Android app and no-code editor.
+    \item --Developed a marketplace for CYA stories.
+    \item --Winner of Special prize for innovativity at Telekom Srbija Regional App Challenge 2018.
+\end{itemize}}
 \end{minipage}\newline%
 %
 \begin{minipage}[t]{\linewidth}\vspace{\subsectionSpace}
@@ -18,7 +23,12 @@
 \ribbonJava \ribbonPlay \ribbonSwing \ribbonPostgres \ribbonJavascript\newline
 \vspace{\ribbonBottomMargin}
 
-{\contentFont Three apps designed to work together in order to collect and interpret data about Serbian primary schools. I've built a scraper which collects students’ grades and graduation data, enrolment simulator with support for custom rules, SQL-like data plotting language, web frontend for plots, performant plotter in Swing (able to handle and modify over $10^5$ points) and a visual query builder for desktop. Data and code is freely available on my GitHub.}
+{\contentFont \begin{itemize}
+    \item --Built a web scraper to collect high school enrolment data.
+    \item --Implemented an enrolment simulator with support for custom rules.
+    \item --Created a web app with SQL-like data plotting language.
+    \item --Developed a desktop app with visual query builder and a performant plotter in Swing framework.
+\end{itemize}}
 \end{minipage}\newline%
 %
 \begin{minipage}[t]{\linewidth}\vspace{\subsectionSpace}
@@ -28,17 +38,24 @@
 \ribbonR \ribbonTidyverse \ribbonPostgres \ribbonJava \ribbonSpringBoot\newline
 \vspace{\ribbonBottomMargin}
 
-{\contentFont A set of apps which transform surveys to conversational format, using Facebook messages as proof of concept. My role was focused on interpreting existing engagement data and building dashbord for future analytics in R's shiny framework, supporting simple plots as well as inference methods such as linear regression and PCA. The project won \nth{3} prize at RAF Hakaton 2019.}
+{\contentFont \begin{itemize}
+    \item --Hackathon project which aimed to transform surveys to conversations, with Facebook chatbot as a proof of concept. We placed \nth{3} at RAF Hakaton 2019.
+    \item --My main role was interpreting existing engagement data and building interactive dashboard for future analytics using R's shiny framework.
+    \item --I also supported the team when it came to infrastructure tasks.
+\end{itemize}}
 \end{minipage}\newline%
 %
 \begin{minipage}[t]{\linewidth}\vspace{\subsectionSpace}
-{\subtitleFont\bold VIDEO COMPRESSOR \extraLight\scshape| Web app \href{https://github.com/luka-j/MediaCompressor}{\faGithub} \href{https://compressor.luka-j.rocks/}{\faGlobe}}\newline
+{\subtitleFont\bold VIDEO COMPRESSOR \extraLight\scshape| Web app \href{https://github.com/luka-j/MediaCompressor}{\faGithub}}\newline
 
 \vspace{\ribbonTopMargin}
 \ribbonKotlin \ribbonSpringBoot \ribbonPostgres \ribbonFfmpeg\newline
 \vspace{\ribbonBottomMargin}
 
-{\contentFont A web app which transcodes videos using x265 codec and applies size optimizations for video and audio data. It can use one or more worker nodes to speed up the process, as well as act as a worker for configured master nodes.}
+{\contentFont\begin{itemize}
+    \item --Created a web app which aimed to reduce video size without significant compromises in quality, mainly used by fellow students during 2020/2021.
+    \item --It supports clustering, so job queue is distributed among multiple nodes.
+\end{itemize}}
 \end{minipage}\newline%
 %
 \begin{minipage}[t]{\linewidth}\vspace{\subsectionSpace}
@@ -48,5 +65,9 @@
 \ribbonLatex \ribbonFontAwesome \newline
 \vspace{\ribbonBottomMargin}
 
-{\contentFont I've designed, made-up and built this very document on top of \LaTeX's \texttt{minimal} document class. It makes use of interactive PDF features which are not universally supported (e. g. in browsers), but falls back gracefully.}
+{\contentFont\begin{itemize}
+    \item --Everything you're looking at is a product of my \LaTeX proficiency \& patience.
+    \item --It is designed from scratch and built on top of \texttt{minimal} document class.
+    \item --Especially interesting was building clickable elements below, and making sure nothing falls apart on viewers which don't support such functionality.
+\end{itemize}}
 \end{minipage}\newline
